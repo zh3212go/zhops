@@ -5,17 +5,25 @@ class MainPageHandler(web.RequestHandler):
     def get(self, *args, **kwargs):
         self.render('index.html')
 
+    def data_received(self, chunk):
+        pass
+
+
 class RegisterHandler(web.RequestHandler):
+    def data_received(self, chunk):
+        pass
+
     def get(self, *args, **kwargs):
         self.render('register.html')
+
 
 settings = {
     'template_path': 'templates',
 }
 application = web.Application([
-            (r"/", MainPageHandler),
-            (r"/register", RegisterHandler),
-        ], **settings)
+    (r"/", MainPageHandler),
+    (r"/register", RegisterHandler),
+], **settings)
 
 if __name__ == '__main__':
     http_server = httpserver.HTTPServer(application)
