@@ -25,8 +25,8 @@ $(document).ready(function(){
             data:pd,
             cache:false,
             success:function(data){
-                if (data === user) {
-                    window.location.href = "/user?user="+data;
+                if (data === "1") {
+                    window.location.href = "/user?user="+user;
                 }
                 if (data === "-1") {
                     $("#username_tip").text('user is not exist') ;

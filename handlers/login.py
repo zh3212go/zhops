@@ -17,7 +17,7 @@ class LoginHandler(BaseHandler):
             db_pwd = user_infos[0][2]
             if db_pwd == password:
                 self.set_current_user(username)
-                self.write(username)
+                self.write("1")
             else:
                 self.write("-2")
         else:
