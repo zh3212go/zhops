@@ -19,7 +19,7 @@ class LoginHandler(BaseHandler):
                 self.set_current_user(username)
                 self.write(username)
             else:
-                self.write("-1")
+                self.write("-2")
         else:
             self.write("-1")
 
